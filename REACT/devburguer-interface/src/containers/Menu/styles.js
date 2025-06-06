@@ -1,0 +1,92 @@
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Background from '../../assets/BackgroundLogin.svg';
+import BannerHamburger from '../../assets/banner-home.svg';
+
+export const Container = styled.div`
+
+width: 100%;
+min-height: 100vh;
+background-color: ${(props) => props.theme.secondWhite};
+
+background: linear-gradient(
+    rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+),  
+ url('${Background}');
+`;
+
+export const Banner = styled.div`
+
+display: flex; 
+justify-content: center;
+align-items: center;
+height: 480px;
+width: 100%;
+position: relative;
+
+background: url('${BannerHamburger}') ;
+background-color: ${(props) => props.theme.mainBlack};
+background-position: center;
+background-size: cover;
+
+h1{
+    font-family: 'Road Rage', sans-serif;
+    font-size: 80px;
+    line-height: 65px;
+    position: absolute;
+    color: ${(props) => props.theme.white};
+
+    right: 5%;
+    top: 100px;
+    
+    span{
+        display: block;
+        color: ${(props) => props.theme.white};
+        font-size: 20px;
+    }
+}
+`;
+
+export const CategoryMenu = styled.div`
+display: flex;
+justify-content: center;
+gap: 50px;
+margin-top: 30px;
+`;
+
+export const CategoryButton = styled(Link)`
+text-decoration: none;
+cursor: pointer;
+background: none;
+color: ${(props) =>
+  props.$isAtiveCategory ? (props) => props.theme.purple : '#9a9a9d'} ;
+font-size: 24px;
+font-weight: 500;
+padding-bottom: 5px;
+line-height: 20px;
+border: none;
+border-bottom: ${(props) => props.$isAtiveCategory && `3px solid ${(props) => props.theme.purple}`} 
+`;
+
+export const ProductsConteiner = styled.div`
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+padding: 40px;
+gap: 60px;
+justify-content: center;
+max-width: 1280px;
+margin: 50px auto;
+
+`;
+export const Button = styled(Link)`
+  background: none;
+  color: #9a9a9d;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 20px;
+  padding-bottom: 10px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+`;
